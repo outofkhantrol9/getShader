@@ -16,7 +16,7 @@ function getShader(gl, id) {
 
   var scriptStr = '';
 
-  var textNodes = Array.prototype.slice.call(scriptEl.childNodes).filter(function(node) {
+  var textNodes = Array.prototype.slice.call(scriptEl.childNodes).filter(function getTextNodes(node) {
     return node.nodeType === 3;
   });
 
