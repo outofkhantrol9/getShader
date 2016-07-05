@@ -8,8 +8,6 @@ function getShader(gl, scriptEl) {
     throw new Error('getShader: A script element is required.');
   }
 
-  var scriptStr = scriptEl.textContent;
-
   var shader;
 
   if (scriptEl.type === 'x-shader/x-vertex') {
@@ -20,7 +18,7 @@ function getShader(gl, scriptEl) {
     throw new Error('getShader: Shader type ' + scriptEl.type + ' was not recognized.');
   }
 
-  gl.shaderSource(shader, scriptStr);
+  gl.shaderSource(shader, scriptEl.textContent);
 
   gl.compileShader(shader);
 
