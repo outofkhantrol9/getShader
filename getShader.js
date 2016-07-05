@@ -1,11 +1,11 @@
 function getShader(gl, scriptEl) {
 
-  if (!gl || !(gl instanceof WebGLRenderingContext)) {
-    throw new Error('getShader: A WebGL context is required.');
+  if (!(gl instanceof WebGLRenderingContext)) {
+    throw new TypeError('getShader: ' + gl + ' (parameter 1) is not a WebGL context.');
   }
 
-  if (!scriptEl || !(scriptEl instanceof HTMLScriptElement)) {
-    throw new Error('getShader: A script element is required.');
+  if (!(scriptEl instanceof HTMLScriptElement)) {
+    throw new TypeError('getShader: ' + scriptEl + ' (parameter 2) is not a script element.');
   }
 
   var shader;
