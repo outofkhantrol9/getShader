@@ -8,15 +8,7 @@ function getShader(gl, scriptEl) {
     throw new Error('getShader: A script element is required.');
   }
 
-  var scriptStr = '';
-
-  var textNodes = Array.prototype.slice.call(scriptEl.childNodes).filter(function getTextNodes(node) {
-    return node.nodeType === 3;
-  });
-
-  for (var i = 0, length = textNodes.length; i < length; ++i) {
-    scriptStr += textNodes[i].textContent;
-  }
+  var scriptStr = scriptEl.textContent;
 
   var shader;
 
