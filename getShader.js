@@ -1,4 +1,6 @@
 function getShader(gl, scriptEl) {
+  
+  'use strict';
 
   if (!(gl instanceof WebGLRenderingContext)) {
     throw new TypeError('getShader: ' + gl + ' (parameter 1) is not a WebGL context.');
