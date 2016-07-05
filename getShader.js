@@ -1,17 +1,11 @@
-function getShader(gl, id) {
+function getShader(gl, scriptEl) {
 
-  if (!gl) {
+  if (!gl || !(gl instanceof WebGLRenderingContext)) {
     throw new Error('getShader: A WebGL context is required.');
   }
 
-  if (!id) {
-    throw new Error('getShader: An id is required.');
-  }
-
-  var scriptEl = document.getElementById(id);
-
-  if (!scriptEl) {
-    throw new Error('getShader: No script element with id ' + id + ' was found.');
+  if (!scriptEl || !(scriptEl instanceof HTMLScriptElement)) {
+    throw new Error('getShader: A script element is required.');
   }
 
   var scriptStr = '';
