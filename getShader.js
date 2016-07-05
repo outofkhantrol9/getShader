@@ -1,5 +1,5 @@
 function getShader(gl, scriptEl) {
-  
+	
   'use strict';
 
   if (!(gl instanceof WebGLRenderingContext)) {
@@ -17,7 +17,7 @@ function getShader(gl, scriptEl) {
   } else if (scriptEl.type === 'x-shader/x-fragment') {
     shader = gl.createShader(gl.FRAGMENT_SHADER);
   } else {
-    throw new Error('getShader: Shader type ' + scriptEl.type + ' was not recognized.');
+    throw new Error('getShader: Shader type ' + scriptEl.type + ' is not recognized.');
   }
 
   gl.shaderSource(shader, scriptEl.textContent);
